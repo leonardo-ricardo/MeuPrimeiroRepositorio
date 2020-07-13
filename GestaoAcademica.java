@@ -5,26 +5,34 @@ public class GestaoAcademica {
 		// TODO Auto-generated method stub
 		
 		Scanner sc = new Scanner(System.in);
+		double prova, proj, exercicios, notaM, media, mediaNecessaria, mediaLista, mediaTotal;
+		
 		System.out.print("Digite a nota da Prova: ");
-		String prova1 = sc.nextLine();
+		prova = sc.nextDouble();
+		
 		System.out.println("Digite a nota do Projeto: ");
-		String proj1 = sc.nextLine();
+		proj = sc.nextDouble();
+		
 		System.out.println("Digite a nota da Lista de Exercicios: ");
-		String lste = sc.nextLine();
+		exercicios = sc.nextDouble();
+		
 		System.out.println("Digite a nota de MOOCS: ");
-		String notaM = sc.nextLine();
-		String Media = prova1 + proj1 + lste + notaM;
-		int mediaConvertida = Integer.parseInt(Media);
-		int MediaFinal = 8;
-		int notaMinima = MediaFinal - 10; 
+		notaM = sc.nextDouble();
 		
-		boolean Aprovado = mediaConvertida >= MediaFinal;
+		media = (prova + proj + notaM) / 3;
+		mediaLista = (exercicios) / 2;
+		mediaTotal = (media + mediaLista);
+		mediaNecessaria = (mediaTotal - 10);
 		
-		if(Aprovado) {
-			System.out.println("Você foi Aprovado!! Parabéns!");
-		}else {
-			System.out.print("Ah não, você Reprovou! Tire no minimo" + notaMinima + "para passar!");
+		if(media >= 8) {
+			System.out.println("VocÃª foi Aprovado com mÃ©dia" + mediaTotal + "ParabÃ©ns !!");
 		}
+			else {
+				System.out.println("VocÃª foi reprovado, necessita tirar nota " +mediaNecessaria+ " para ser aprovado");
+				
+			}
+		
+
 		sc.close();
 		
 	}
