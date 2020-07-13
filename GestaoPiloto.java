@@ -32,7 +32,7 @@ public class GestaoPiloto {
 				System.out.println("Você deve realizar a Avaliação Final(AF)");
 			
 		}
-			else if(mediaBi < 5){
+			else{
 				System.out.println("Você foi reprovado.");
 			
 		}
